@@ -1,0 +1,379 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main_form_login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.logoone {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.logne {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-left: 33%;
+}
+
+.login_form {
+    width: 35%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 2px 2px 12px black;
+    align-items: center;
+    padding: 24px;
+}
+
+.register_form {
+    width: 35%;
+    height: fit-content;
+    box-shadow: 2px 2px 12px black;
+    border-radius: 12px;
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 200px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: rgb(230, 230, 230);
+    text-indent: 8px;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+.button_login {
+    padding: 8px 14px;
+    font-size: 16px;
+    border-color: blue;
+    background-color: blue;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button_login:hover {
+    background-color: white;
+    color: blue;
+}
+
+.card_main {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    height: fit-content;
+    margin-top: 40px;
+    box-shadow: 2px 2px 12px black;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.top_left_card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.image {
+    display: flex;
+}
+
+.image_main {
+    width: 240px;
+    height: 240px;
+    border-radius: 8px;
+}
+
+.para_card {
+    font-weight: lighter;
+    font-size: 16px;
+}
+
+.title_card {
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.profilelink {
+    margin-right: 24px;
+}
+
+.check {
+    border-bottom: 1px solid lightsalmon;
+    padding-bottom: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: lightsalmon;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 6px 18px;
+}
+
+.info_cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.one_title {
+    font-weight: lighter;
+    font-size: 36px;
+}
+
+.one_bed {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.one_bath {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.one_price {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.one_address {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.one_para {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.apply_one {
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: lightcoral;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    border: 1px solid lightcoral;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 300ms ease-in-out;
+}
+
+.apply_one:hover {
+    cursor: pointer;
+    border: 1px solid black;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+.left_info_cont {
+    width: 50%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center; */
+}
+
+.image_one_cont {
+    width: 400px;
+    height: 400px;
+    border-radius: 8px;
+}
+
+
+.right_info_cont {
+    width: 35%;
+    position: relative;
+    /* This will allow us to position the arrows relative to this container */
+    overflow: hidden;
+    /* This will ensure that the images do not go outside the container */
+}
+
+.fa-plane {
+    transform: rotate(180deg);
+}
+
+.delete_link {
+    padding-bottom: 2px;
+    border-bottom: 1px solid lightcoral;
+    margin-right: 24px;
+}
+
+.update_link {
+    padding-bottom: 2px;
+    border-bottom: 1px solid lightcoral;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    z-index: 10;
+    cursor: pointer;
+    padding: 12px;
+}
+
+.swiper-button-next {
+    right: 20px;
+}
+
+.swiper-button-prev {
+    right: 60px;
+}
+
+.swiper-button-prev::after {
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
+    font-size: 18px !important;
+    padding: 10px !important;
+    border-radius: 80% !important;
+}
+
+.swiper-button-next::after {
+    background-color: white !important;
+    color: black !important;
+    font-size: 18px !important;
+    padding: 10px !important;
+    border-radius: 100% !important;
+}
+
+.spec {
+    color: white;
+}
+
+.spec:hover {
+    color: lightcoral;
+}
+
+.second_register {
+    width: 50%;
+    min-height: 400px;
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 30px;
+    box-shadow: 2px 2px 12px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.final_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.title_final {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: lightcoral;
+}
+
+.final_input {
+    width: 50%;
+    height: 40px;
+    border: 2px solid black;
+    background-color: rgb(241, 241, 241);
+    text-indent: 12px;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.final_apply {
+    width: 50%;
+    height: 40px;
+    margin: 0 auto;
+    background-color: lightcoral;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    border: 1px solid lightcoral;
+    font-weight: lighter;
+    border-radius: 8px;
+    transition: all 300ms ease-in-out;
+    margin-top: 20px;
+}
+
+.error{
+    color: crimson;
+    text-align: center;
+}
+
+.final_apply:hover {
+    background-color: white;
+    color: lightcoral;
+    cursor: pointer;
+}
+
+
+@media(max-width: 700px) {
+    .card_main {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        height: fit-content;
+        margin-top: 40px;
+        box-shadow: 2px 2px 12px black;
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .top_left_card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 90%;
+    }
+
+    .check {
+        margin-bottom: 24px;
+    }
+}
+

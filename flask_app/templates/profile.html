@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body class="backPic">
+    <div class="nav">
+        <h2>
+            Welcome {{user.first_name}}!
+        </h2>
+        <div class="logo">
+            <h1 class="logoone">Ukra Properties Management</h1>
+        </div>
+        <div class="right_nav">
+            <a class="profilelink" href="/main">
+                <i class="fas fa-plane"></i> Home
+            </a>
+            <a class="logoutlink" href="/logout">
+                Logout
+            </a>
+        </div>
+    </div>
+    {%for i in applications%}
+    <div class="card_main">
+        <div class="top_left_card">
+            <h1 class="title_card">{{i.building.name}}</h1>
+            <h1 class="one_price">{{i.building.price}}</h1>
+            <p class="para_card">{{i.building.description}}</p>
+            <div class="">
+                <a class="delete_link" href="/delete/application/{{i.id}}"><i class="fas fa-trash"></i> Delete
+                    application</a>
+                <a class="update_link" href="/update/application/{{i.id}}/{{i.building.id}}">Update Application</a>
+            </div>
+        </div>
+        <div class="image">
+            {%if i.building.id == 3 %}
+            <img class="image_main" src="{{url_for('static', filename = 'IMGs/Playmouth Apartments.png')}}">
+            {%endif%}
+            {%if i.building.id == 4 %}
+            <img class="image_main" src="{{url_for('static', filename = 'IMGs/Trost Apartments.jpeg')}}">
+            {%endif%}
+            {%if i.building.id == 5 %}
+            <img class="image_main" src="{{url_for('static', filename = 'IMGs/Rosewood Apartments.jpeg')}}">
+            {%endif%}
+        </div>
+    </div>
+    {%endfor%}
+</body>
+</html>

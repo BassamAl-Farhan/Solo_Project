@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/dashboard.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div class="nav">
+        <h2>
+            Welcome {{user.first_name}}
+        </h2>
+        <div class="logo">
+            <h1 class="logoone">Ukra Properties Management</h1>
+        </div>
+        <div class="right_nav">
+            <a class="profilelink" href="/main">
+                Home
+            </a>
+            <a class="profilelink" href="/profile">
+                Profile
+            </a>
+            <a class="logoutlink" href="/logout">
+                Logout
+            </a>
+        </div>
+    </div>
+    <div class="info_cont">
+        <div class="left_info_cont">
+            <h1 class="one_title">{{apartment.name}}</h1>
+            <h1 class="one_bed"> <b>Bedroom: </b> {{apartment.bed}}</h1>
+            <h1 class="one_bath"> <b>Bathroom: </b> {{apartment.bath}}</h1>
+            <h1 class="one_price"> <b>Price: </b>{{apartment.price}}</h1>
+            <h4 class="one_address"> <b>Address: </b> {{apartment.address}}</h4>
+            <p class="one_para"> <b>Description: </b> {{apartment.seconddescription}}</p>
+            
+            {% if Application.has_user_applied({'building_id': apartment.id, 'applicant_id': user.id}) %}
+                <button type="button" class="apply_one" disabled>Applied</button>
+            {% else %}
+                <a class="spec" href="/apply/building/{{apartment.id}}"><button type="submit" class="apply_one">Apply </button></a>
+            {% endif %}
+        </div>
+        <div class="right_info_cont">
+            <div class="swiper-button-prev"></div>
+            <!-- Initialize Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {%if apartment.id == 3%}
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _1.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Playmouth Apartments.png')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _2.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _3.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _4.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _5.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _6.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _7.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _8.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _9.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _10.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _11.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _12.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Plymouth _img/Plymouth _13.jpg')}}">
+                    </div>
+                    {%endif%}
+                    {%if apartment.id == 4%}
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Trost_img/Trost_1.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Trost Apartments.jpeg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Trost_img/Trost_2.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Trost_img/Trost_3.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Trost_img/Trost_4.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Trost_img/Trost_5.jpg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Trost_img/Trost_6.jpg')}}">
+                    </div>
+                    {%endif%}
+                    {%if apartment.id == 5%}
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Rosewood_img/Rosewood_2.jpeg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Rosewood_img/Rosewood_1.jpeg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Rosewood_img/Rosewood_3.jpeg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Rosewood_img/Rosewood_4.jpeg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Rosewood_img/Rosewood_5.jpeg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                            src="{{url_for('static', filename = 'IMGs/Rosewood_img/Rosewood_6.jpeg')}}">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="image_one_cont"
+                        src="{{url_for('static', filename = 'IMGs/Rosewood Apartments.jpeg')}}">
+                    </div>
+                    {%endif%}
+                    <!-- Add more swiper-slide divs for each image you want to add to the slider -->
+                </div>
+                <!-- Add Pagination -->
+            </div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            initialSlide: 1,  // Start on the second slide
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+        });
+    </script>
+</body>
+</html>

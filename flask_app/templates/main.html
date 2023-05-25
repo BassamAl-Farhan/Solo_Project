@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+</head>
+<body>
+    <div class="nav">
+        <h2>
+            Welcome {{user.first_name}}
+        </h2>
+        <div class="logo">
+            <h1 class="logoone">Ukra Properties Management</h1>
+        </div>
+        <div class="right_nav">
+            <a class="profilelink" href="/profile">
+                Profile
+            </a>
+            <a class="logoutlink" href="/logout">
+                Logout
+            </a>
+        </div>
+    </div>
+    <h2>
+        {% for i in bulding %}
+        <div class="card_main">
+            <div class="top_left_card">
+                <h1 class="title_card">{{i.name}}</h1>
+                <p class="para_card">{{i.description}}</p>
+                <a class="check" href="/one/apartment/{{i.id}}"> Check it out!</a>
+            </div>
+            <div class="image">
+                {%if i.id == 3%}
+                <img class="image_main" src="../static/IMGs/Playmouth Apartments.png">
+                {%endif%}
+                {%if i.id == 4 %}
+                <img class="image_main" src="../static/IMGs/Trost Apartments.jpeg">
+                {%endif%}
+                {%if i.id == 5 %}
+                <img class="image_main" src="../static/IMGs/Rosewood Apartments.jpeg">
+                {%endif%}
+            </div>
+        </div>
+        {% endfor %}
+    </h2>
+</body>
+</html>

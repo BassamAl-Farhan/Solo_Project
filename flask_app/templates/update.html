@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/dashboard.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <h2>
+            Welcome {{user.first_name}}
+        </h2>
+        <div class="logo">
+            <h1 class="logoone">Ukra Properties Management</h1>
+        </div>
+        <div class="right_nav">
+            <a class="profilelink" href="/main">
+                Home
+            </a>
+            <a class="profilelink" href="/profile">
+                Profile
+            </a>
+            <a class="logoutlink" href="/logout">
+                Logout
+            </a>
+        </div>
+    </div>
+    <h1 class="title_final">Update you application for {{apartment.name}}</h1>
+    <form class="second_register" action="/update/form/applicaiton" method="post">
+        <input type="hidden" name="building_id" value={{apartment.id}}>
+        <input type="hidden" name="applicant_id" value={{user.id}}>
+        <input class="final_input" type="text" name="first_name" placeholder="First Name">
+        <input class="final_input" type="text" name="last_name" placeholder="Last Name">
+        <input class="final_input" type="email" name="email" placeholder="Email">
+        <input class="final_input" type="name" name="last_address" placeholder="Last Address">
+        <input class="final_input" type="int" name="income" placeholder="Income">
+        <input type="hidden" name="id" value={{application_single.id}}>
+        <input type="hidden" value={{user.id}} name="user_id">
+        <input type="hidden" name="password" value={{user.password}}>
+        <div class="final_div">
+            <label for="date">Date Of Birth</label>
+            <input class="final_input" type="date" name="birthday">
+        </div>
+        <div class="final_div">
+            <label class="" for="date">Moving Date</label>
+            <input class="final_input" type="date" name="moving_date">
+        </div>
+        <button class="final_apply">Update Application</button>
+    </form>
+</body>
+</html>

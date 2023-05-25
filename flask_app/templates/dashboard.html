@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/dashboard.css')}}">
+    <script src="{{url_for('static', filename = 'js/dashboard.js')}}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="logo">
+        <h1 class="logne">Ukra Properties Management</h1>
+    </div>
+    <div class="main_form_login">
+        <form class="register_form" action="/register/form" method="post">
+            <h1>Register</h1>
+            {% with messages = get_flashed_messages() %}            <!-- declare a variable called messages -->
+                {% if messages %}                                   <!-- check if there are any messages -->
+                    {% for message in messages %}                   <!-- Loop through the messages -->
+                        <p class="error">{{message}}.!</p>                          <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <input type="text" name="first_name" placeholder="First Name">
+            <input type="text" name="last_name" placeholder="Last Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <button class="button_login">Create account</button>
+        </form>
+        <form class="login_form" action="/login/form" method="post">
+            <h1>Login</h1>
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <button class="button_login">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
